@@ -1,0 +1,46 @@
+#carousel_cndns_1{ margin:0; padding:0;}
+#carousel_cndns_1 ul{list-style:none;}
+#carousel_cndns_1 ol{list-style:none;}
+#carousel_cndns_1 li{list-style:none;}
+#carousel_cndns_1 p{margin:0;font-size:12px;vertical-align:middle;}
+#carousel_cndns_1 input{margin:0;font-size:12px;vertical-align:middle;}
+#carousel_cndns_1 button{margin:0;font-size:12px;vertical-align:middle;}
+#carousel_cndns_1 table{border-collapse:collapse;border-spacing:0;}
+
+#carousel_cndns_1 UL {LIST-STYLE: none none outside}
+#carousel_cndns_1 .frame {WIDTH: 970px; POSITION: relative; HEIGHT: 280px; overflow:hidden; text-align:left;}
+#carousel_cndns_1 .frames {WIDTH: 2920px; POSITION: relative; HEIGHT: 280px}
+#carousel_cndns_1 .frame-2 {LEFT: 1200px; OVERFLOW: hidden; WIDTH: 970px; POSITION: absolute; HEIGHT: 280px}
+#carousel_cndns_1 .frame-3 {LEFT: 1460px; OVERFLOW: hidden; WIDTH: 970px; POSITION: absolute; HEIGHT: 280px}
+#carousel_cndns_1 .frame-4 {LEFT: 2190px; OVERFLOW: hidden; WIDTH: 970px; POSITION: absolute; HEIGHT: 280px}
+#carousel_cndns_1 .frame-5 {LEFT: 2920px; OVERFLOW: hidden; WIDTH: 970px; POSITION: absolute; HEIGHT: 280px}
+
+
+#carousel_cndns_1 .controls { padding-left:430px; text-align:center;  CURSOR: hand; BOTTOM: 0px; PADDING-TOP: 2px;HEIGHT: 20px}
+#carousel_cndns_1 .overlay {BORDER-RIGHT: #ededed 5px solid; BORDER-TOP: #ededed 5px solid; DISPLAY: none; FILTER: alpha(opacity=90); BORDER-LEFT: #ededed 5px solid; WIDTH: 188px; CURSOR: hand; BORDER-BOTTOM: #ededed 5px solid; POSITION: absolute; HEIGHT: 118px; BACKGROUND-COLOR: #fff; opacity: .9}
+#carousel_cndns_1 .two-overlay {HEIGHT: 141px}
+#carousel_cndns_1 .olines {HEIGHT: 122px}
+#carousel_cndns_1 .two-olines {HEIGHT: 142px}
+#carousel_cndns_1 .sdw {BORDER-RIGHT: #666 2px solid; BORDER-TOP: #666 0px solid; DISPLAY: block; LEFT: -5px; BORDER-LEFT: #666 0px solid; WIDTH: 196px; BORDER-BOTTOM: #666 2px solid; POSITION: absolute; TOP: -5px; HEIGHT: 127px; opacity: .8}
+#carousel_cndns_1 .two-sdw {HEIGHT: 151px}
+#carousel_cndns_1 .slines {HEIGHT: 126px}
+#carousel_cndns_1 .two-slines {HEIGHT: 149px}
+#carousel_cndns_1 .details {PADDING-RIGHT: 17px; DISPLAY: block; PADDING-LEFT: 17px; PADDING-BOTTOM: 17px; FONT: 12px arial; WIDTH: 163px; PADDING-TOP: 17px; HEIGHT: 93px}
+#carousel_cndns_1 .dlines {HEIGHT: 97px}
+#carousel_cndns_1 .two-dlines {HEIGHT: 137px}
+#carousel_cndns_1 .title {PADDING-BOTTOM: 8px; FONT: bold 15px "Trebuchet MS"; BORDER-BOTTOM: #ccc 1px solid}
+#carousel_cndns_1 .priceMsg {PADDING-BOTTOM: 1px; COLOR: #333; PADDING-TOP: 4px}
+#carousel_cndns_1 .price {FONT: bold 15px arial}
+#carousel_cndns_1 .legal {FONT: 11px arial; COLOR: #666}
+#carousel_cndns_1 .terms {FLOAT: right; WIDTH: 80px}
+#carousel_cndns_1 .content {PADDING-RIGHT: 10px; DISPLAY: none; PADDING-LEFT: 10px; FILTER: alpha(opacity=80); PADDING-BOTTOM: 5px; WIDTH: 695px; PADDING-TOP: 5px; POSITION: absolute; TOP: 258px; BACKGROUND-COLOR: #fff; TEXT-ALIGN: justify; opacity: .8}
+#carousel_cndns_1 .double-des {PADDING-BOTTOM: 12px}
+#carousel_cndns_1 .des {COLOR: #1161b7; PADDING-TOP: 12px}
+#carousel_cndns_1 .selected {FLOAT: left; FONT: 17px "trebuchet ms"; MARGIN-LEFT: 4px; WIDTH: 16px; COLOR: #8f8f8f; POSITION: relative; HEIGHT: 15px}
+#carousel_cndns_1 .off {FLOAT: left; FONT: 17px "trebuchet ms"; MARGIN-LEFT: 4px; WIDTH: 16px; COLOR: #dadada; POSITION: relative; HEIGHT: 15px}
+#carousel_cndns_1 .on {FLOAT: left; FONT: 17px "trebuchet ms"; MARGIN-LEFT: 4px; WIDTH: 16px; COLOR: #1162b7; POSITION: relative; HEIGHT: 15px}
+#carousel_cndns_1 .arrow {FLOAT: left; WIDTH: 12px; HEIGHT: 20px}
+#carousel_cndns_1 .l-a {BACKGROUND: url(../images/sprFilmstripArrows.gif) no-repeat 0px -22px}
+#carousel_cndns_1 .l-h {BACKGROUND: url(../images/sprFilmstripArrows.gif) no-repeat 0px -47px}
+#carousel_cndns_1 .r-a {BACKGROUND: url(../images/sprFilmstripArrows.gif) no-repeat 0px -97px}
+#carousel_cndns_1 .r-h {BACKGROUND: url(../images/sprFilmstripArrows.gif) no-repeat 0px -122px}

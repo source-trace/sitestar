@@ -1,0 +1,48 @@
+.portfolio_item_left {
+	PADDING-RIGHT: 29px; FLOAT: left; WIDTH: 198px
+}
+.portfolio_item_center {
+	PADDING-RIGHT: 29px; FLOAT: left; WIDTH: 198px
+}
+.portfolio_item_right {
+	FLOAT: left; WIDTH: 198px
+}
+.portfolio_wrap {
+	PADDING-BOTTOM: 15px
+}
+.portfolio_title {
+	PADDING-BOTTOM: 0px
+}
+#search_conatiner {
+	WIDTH: 190px
+}
+#portfolio_list_container {
+	WIDTH: 190px; PADDING-TOP: 0px
+}
+#categories_list_container {
+	WIDTH: 190px; PADDING-TOP: 0px
+}
+#archive_list_container {
+	WIDTH: 190px; PADDING-TOP: 0px
+}
+#links_list_container {
+	WIDTH: 190px; PADDING-TOP: 0px
+}
+#follow_list_container {
+	WIDTH: 190px; PADDING-TOP: 0px
+}
+#sidebar {
+	PADDING-RIGHT: 18px; PADDING-LEFT: 18px; FLOAT: left; PADDING-BOTTOM: 0px; WIDTH: 190px; COLOR: #666666; PADDING-TOP: 0px
+}
+#text_search {
+	BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; VERTICAL-ALIGN: top; BORDER-LEFT: #cccccc 1px solid; WIDTH: 124px; MARGIN-RIGHT: 5px; BORDER-BOTTOM: #cccccc 1px solid; HEIGHT: 19px
+}
+.resume_item_left {
+	PADDING-RIGHT: 29px; FLOAT: left; MARGIN-BOTTOM: 30px; WIDTH: 198px
+}
+.resume_item_center {
+	PADDING-RIGHT: 29px; FLOAT: left; MARGIN-BOTTOM: 30px; WIDTH: 198px
+}
+.resume_item_right {
+	FLOAT: left; MARGIN-BOTTOM: 30px; WIDTH: 198px
+}

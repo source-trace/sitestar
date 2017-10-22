@@ -1,0 +1,57 @@
+#lantern_slide_cndns4 IMG {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px
+}
+
+#lantern_slide_cndns4 {
+	BORDER-RIGHT: #ccc 0px solid; PADDING-RIGHT: 0px; BORDER-TOP: #ccc 0px solid; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px 0px; OVERFLOW: hidden; BORDER-LEFT: #ccc 0px solid; WIDTH: 972px; PADDING-TOP: 0px; BORDER-BOTTOM: #ccc 0px solid; HEIGHT: 344px
+}
+
+#bimg_cndns4 {
+	FILTER: progid:DXImageTransform.Microsoft.Fade ( duration=0.5,overlap=1.0 ); OVERFLOW: hidden; HEIGHT: 280px
+}
+#info_cndns4 {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; LINE-HEIGHT: 34px; TEXT-ALIGN: center
+}
+.lkff A {
+	COLOR: #fff; TEXT-DECORATION: none
+}
+.lkff A:hover {
+	COLOR: #fff; TEXT-DECORATION: none
+}
+#simg_cndns4 {
+	PADDING-LEFT: 9px
+}
+#simg_cndns4 DIV {
+	FONT-SIZE: 12px; BACKGROUND: #d6d6d6; FLOAT: left; WIDTH: 18px; CURSOR: pointer; COLOR: #fff; LINE-HEIGHT: 18px; MARGIN-RIGHT: 1px; HEIGHT: 18px; TEXT-ALIGN: center
+}
+#simg_cndns4 .f1 {
+	BACKGROUND: #6f6f6f
+}
+.dis {
+	DISPLAY: block
+}
+.undis {
+	DISPLAY: none
+}
+.lkff {
+	WIDTH: 180px
+}
+
+#font_hd_cndns4 {
+	MARGIN-TOP: 0px; BACKGROUND: #343434; WIDTH: 100%; HEIGHT: 41px
+}
+#font_hd_cndns4 TD {
+	OVERFLOW: hidden; HEIGHT: 25px
+}
+.pic {
+	OVERFLOW: hidden
+}
+.pic .dis A {
+	DISPLAY: block; FONT-SIZE: 262px; VERTICAL-ALIGN: middle; OVERFLOW: hidden; WIDTH: 970px; FONT-FAMILY: Arial; HEIGHT: 280px; TEXT-ALIGN: center
+}
+.pic .dis A IMG {
+	MAX-WIDTH: 970px; VERTICAL-ALIGN: middle
+}
+#font_hd_cndns4 TD A {
+	FONT-SIZE: 12px; WIDTH: 180px; LINE-HEIGHT: 25px; HEIGHT: 25px
+}

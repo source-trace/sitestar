@@ -1,0 +1,63 @@
+#imgPlay_cndns2 UL{PADDING: 0px; MARGIN: 0px;}
+#imgPlay_cndns2 li{ list-style:none;}
+#imgPlay_cndns2 P{PADDING: 0px; MARGIN: 0px;}
+#imgPlay_cndns2 A {COLOR: #333}
+#imgPlay_cndns2 A:hover {COLOR: #e51a45; TEXT-DECORATION: none}
+
+#imgPlay_cndns2 {
+	OVERFLOW: hidden; WIDTH: 970px; ZOOM: 1; POSITION: relative; HEIGHT: 304px
+}
+#imgPlay_cndns2 .imgs IMG {
+	BORDER-RIGHT: #dbdbdb 0px solid; PADDING-RIGHT: 0px; BORDER-TOP: #dbdbdb 0px solid; PADDING-LEFT: 0px; PADDING-BOTTOM: 1px; BORDER-LEFT: #dbdbdb 0px solid; WIDTH: 970px; PADDING-TOP: 1px; BORDER-BOTTOM: #dbdbdb 0px solid
+}
+#imgPlay_cndns2 .imgs LI {
+	FLOAT: left; POSITION: relative
+}
+#imgPlay_cndns2 .imgs {
+	WIDTH: 5760px
+}
+#imgPlay_cndns2 .btn {
+	RIGHT: 12px; OVERFLOW: hidden; WIDTH: 112px; BOTTOM: 12px; TEXT-INDENT: -9999px; POSITION: absolute; HEIGHT: 29px;
+}
+#imgPlay_cndns2 .btn A {
+/*	BACKGROUND: url(../images/bg.png) no-repeat;BACKGROUND-POSITION: 0px 0px; DISPLAY: block; WIDTH: 112px; HEIGHT: 29px;*/
+}
+#imgPlay_cndns2 .btn A:hover {
+/*	BACKGROUND: url(../images/bg.png) no-repeat;BACKGROUND-POSITION: 0px -30px;*/
+}
+#imgPlay_cndns2 .prev {
+	BACKGROUND: url(../images/prev.png) no-repeat 0px 0px; LEFT: 1px; WIDTH: 46px; CURSOR: pointer; TEXT-INDENT: -9999px; POSITION: absolute; TOP: 110px; HEIGHT: 81px
+}
+#imgPlay_cndns2 .next {
+	BACKGROUND: url(../images/next.png) no-repeat 0px 0px; LEFT: 1px; WIDTH: 46px; CURSOR: pointer; TEXT-INDENT: -9999px; POSITION: absolute; TOP: 110px; HEIGHT: 81px
+}
+#imgPlay_cndns2 .next {
+	BACKGROUND-POSITION: right 0px; RIGHT: 1px; LEFT: auto
+}
+#imgPlay_cndns2 .num {
+	DISPLAY: none; LEFT: 400px; POSITION: absolute; TOP: 275px; HEIGHT: 19px
+}
+#imgPlay_cndns2 .num SPAN {
+	DISPLAY: inline-block; BACKGROUND: url(../images/imgPlayer.png) no-repeat -19px -83px; MARGIN: 0px 2px; OVERFLOW: hidden; WIDTH: 14px; CURSOR: pointer; LINE-HEIGHT: 0; HEIGHT: 13px
+}
+#imgPlay_cndns2 .num SPAN.on {
+	BACKGROUND-POSITION: 1px -83px
+}
+#imgPlay_cndns2 .num .lc {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BACKGROUND: url(../images/lc.png) no-repeat; FLOAT: left; PADDING-BOTTOM: 0px; WIDTH: 13px; PADDING-TOP: 3px; HEIGHT: 16px
+}
+#imgPlay_cndns2 .num .mc {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BACKGROUND: url(../images/lc.png) no-repeat; FLOAT: left; PADDING-BOTTOM: 0px; WIDTH: 13px; PADDING-TOP: 3px; HEIGHT: 16px
+}
+#imgPlay_cndns2 .num .rc {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BACKGROUND: url(../images/lc.png) no-repeat; FLOAT: left; PADDING-BOTTOM: 0px; WIDTH: 13px; PADDING-TOP: 3px; HEIGHT: 16px
+}
+#imgPlay_cndns2 .num .mc {
+	BACKGROUND: url(../images/mc.png) repeat-x
+}
+#imgPlay_cndns2 .num .rc {
+	BACKGROUND: url(../images/rc.png) no-repeat
+}
+#numInner {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BACKGROUND: none transparent scroll repeat 0% 0%; PADDING-BOTTOM: 0px; PADDING-TOP: 3px; POSITION: absolute; TOP: 275px; TEXT-ALIGN: center
+}

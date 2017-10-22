@@ -1,0 +1,17 @@
+==IS_HTML==
+0
+==SENDER_NAME==
+pMVC Reloaded Team
+==SUBJECT==
+[pMVC]重设密码请求
+==BODY==
+尊敬的客户：
+　　您收到这封邮件是因为您在我们的网站上[%%site_name%%]提交了重置密码的申请，
+现在您可以点击以下链接来进行密码重置，此链接仅在24小时内有效。
+%%rstpwd_url%%
+
+致
+
+礼
+
+pMVC Reloaded Team

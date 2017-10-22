@@ -1,0 +1,28 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{ margin:0; background:#2c6198 url(../images/bg_admin.jpg) repeat-x;}
+div,a{ font-size:12px; font-family:Arial, Helvetica, sans-serif}
+h1,h2,h3,h4,h5,h6{ font-family:"Microsoft Yahei"; font-weight:normal;  margin:0; padding:0;}
+#main{ width:940px; margin:0 auto; }
+#nav{ width:940px; margin:0 auto; background:url(../images/cbg.jpg) no-repeat}
+#nav .nl{ float:left; width:340px; padding-left:140px;}
+#nav .nr{ float:right; width:340px; padding-left:85px;}
+#nav .nag a{ text-decoration:none;font-family:"Microsoft Yahei"; font-weight:normal; color:#303030; }
+#nav .nag a:hover{ color:#F30}
+#nav .nl h1,#nav .nr h1{ font-size:21px; padding:10px 0px;*padding:8px 0px;_padding:10px 0px 0px 0px;}
+#nav .nag{ margin-bottom:42px;*margin-bottom:40px; _margin-bottom:43px; margin-top:12px; }
+#bottom{ height:74px; text-align:center; color:#FFF; margin-top:20px; line-height:24px;}
+.top{width:940px; height:100px; margin:0 auto; background:url(../images/cbg_top.jpg) no-repeat; }
+.binfo{ position:absolute; color:#FFF; width:400px; margin:-100px 0px 0px 90px;*margin:13px 0px 0px -830px; line-height:20px;}
+.binfo h3{ margin:5px 0px;}
+
+.logo{ margin-left:-2px;float:left;}
+.user{ background:#ebf9ff url(../admin/template/images/user.gif) no-repeat 5px 3px; float:right;margin-top:30px;}
+a{text-decoration:none;}
+*html .user {margin:33px 0 0 274px;}
+*+html .user {margin:-60px 50px 0 0;float:right;position:relative;}
+/* 内容编辑样式 */
+.mod_block, .mod_nag{position:relative;}
+.mod_logo {float:none;_float:left;width:302px;position:relative;margin-left:50px;_margin-left:28px;}
+.mod_toolbar {width:55px;height:28px;line-height:28px;padding-left:25px;position:absolute;right:2px;background:#EBF9FF url(../../../images/edit_content.gif) no-repeat scroll 3px 6px;display:none;}

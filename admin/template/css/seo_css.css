@@ -1,0 +1,14 @@
+body{background:url(../../images/seo_all_bg.jpg) repeat-x scroll center top transparent;color: #757575;font-family:Arial, Helvetica, sans-serif;font-size: 12px; line-height:24px;}
+
+* {margin:0;padding:0;}
+ul,li{list-style:none;}
+
+#seo_top, #seo_con{margin:0 auto;}
+#seo_top{ background:url(../../images/seo_top.jpg) no-repeat; height:700px; width:1000px;}
+#seo_con{ background:#fff url(../../images/seo_con_foot.jpg) no-repeat bottom; width:980px; padding:10px;}
+	#seo_con li {padding-bottom:10px; border-bottom:dashed #ccc 1px; padding-left:10px;}
+	#seo_con li:hover{background:#f5f5f5;}
+	.seo_tit{font-family:"Microsoft Yahei"; font-size:20px; color:#000; padding:5px 0;}
+	.seo_tit1{font-family:"Microsoft Yahei"; font-size:14px; color:#4272DB;}
+	
+#seo_fot{ background:#c4c5c1; margin-top:20px; text-align:center; font-size:11px;}

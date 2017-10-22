@@ -1,0 +1,15 @@
+@charset "utf-8";
+body{background:#cadff0 url(../images/bg1.jpg) no-repeat; margin:0; padding:0;}
+li{list-style:none; font-size:12px; margin-top:5px; color:#585858; line-height:30px;}
+
+#logo{background:url(../images/logo.png); height:40px; width:282px; margin:100px auto 15px auto;}
+
+#in{margin:0 auto; background:url(../images/bg1.png) no-repeat; width:633px; height:282px;}
+	#left{background:url(../images/soft.jpg) no-repeat; width:132px; height:143px; float:left; margin:80px 0 0 77px; display:inline; float:left;}
+	#right{float:left;position:relative;}
+	#right ul{margin-top:90px; _margin-top:80px;}
+	#right li{height:32px;}
+	#right span{ display:block; float:left;width:60px;}
+	#right .button{background:url(../images/button.gif) no-repeat; width:120px;_width:240px; height:30px;border:none;*position:relative;*right:40px;}
+	
+#footer{ color:#608caf;height:30px; line-height:30px; font-family:Arial, Helvetica, sans-serif;font-size:11px; text-align:center; position:relative; bottom:0px; width:100%;display:block;}

@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8" />
+</head>
+<body>
+<form method="post" action="index.php?_m=mod_product&amp;_a=prdlist" onsubmit="javascript:return check_prdsearch_info(this);" id="prdsearchform" name="prdsearchform">
+<input type="text" value="" id="prd_keyword" name="prd_keyword"><input type="submit" value="搜索" id="prdsearch_submit" name="prdsearch_submit">
+</form>
+<script language="javascript" type="text/javascript">
+&lt;!--
+function check_prdsearch_info(thisForm)
+{
+if (/^\s*$/.test(thisForm.elements["prd_keyword"].value))
+{
+	alert("请输入关键字！");
+	thisForm.elements["prd_keyword"].focus();
+	return false;
+}
+return true;
+}
+--&gt;
+</script>
+</body>
+</html>

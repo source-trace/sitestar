@@ -1,0 +1,9 @@
+.jcImgScroll { position:relative; height:342px;  }
+.jcImgScroll li { border:1px solid #ccc; }
+.jcImgScroll li a { display:block; height:340px;  }
+.jcImgScroll li.loading a { background:#fff url(../images/loading.gif) no-repeat center center;} 
+.jcImgScroll li img,.jcImgScroll li,.jcImgScroll em,.jcImgScroll dl { display:none; border:0 none;}
+.jcImgScroll em.sPrev { background:url(../images/arrow-left.png) no-repeat left center; }
+.jcImgScroll em.sNext { background:url(../images/arrow-right.png) no-repeat right center;}
+.jcImgScroll dl dd { background:url(../images/NumBtn.png) no-repeat 0 bottom; text-indent:-9em; }
+.jcImgScroll dl dd:hover,.jcImgScroll dl dd.curr { background-position:0 0; }

@@ -1,0 +1,9 @@
+==IS_HTML==
+0
+==SENDER_NAME==
+pMVC Reloaded Team
+==SUBJECT==
+This is a test mail from pMVC Reloaded Team
+==BODY==
+Hi, %%user%%,
+Thanks for being interested in pMVC Reloaded, a MVC like framework in PHP.

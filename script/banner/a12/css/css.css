@@ -1,0 +1,6 @@
+
+IMG {BORDER: 0px;}
+#linkPush A {PADDING-RIGHT: 5px; DISPLAY: block; PADDING-LEFT: 7px; FLOAT: left; PADDING-BOTTOM: 0px; COLOR: #333; PADDING-TOP: 6px; HEIGHT: 28px; TEXT-ALIGN: center; TEXT-DECORATION: none}
+#linkPush A:hover {BACKGROUND: url(../images/pushHere.gif) no-repeat; WIDTH: 92px; PADDING-TOP: 8px; FONT-FAMILY: "宋体"; TEXT-ALIGN: center}
+#linkPush A.linkPushHere {BACKGROUND: url(../images/pushHere.gif) no-repeat; WIDTH: 92px; PADDING-TOP: 8px; FONT-FAMILY: "宋体"; TEXT-ALIGN: center}
+.overflow{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
