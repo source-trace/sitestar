@@ -131,10 +131,19 @@ function move_data(){
 		alert('<?php _e('Choose Product please!');?>');
 		return false;
 	}
-	
+	parent.adjustHeight();
 	show_iframe_win('index.php?_m=mod_product&_a=move_product&product='+chk_value2,'<?php _e('Move Product to category');?>','610','518');
 	return false;
 }
+document.body.addEventListener("DOMNodeRemoved", function() {
+	setTimeout(function(){
+		if( $("#TB_window").length > 0 ){
+			parent.adjustHeight( $("#content").height()>600?$("#content").height():600 );
+		}else{
+			parent.adjustHeight( $("#content").height() );
+		}
+	}, 500);
+}, true);
 //-->
 </script>
 <div class="status_bar">

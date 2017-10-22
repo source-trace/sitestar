@@ -22,8 +22,8 @@ class ModProduct extends Module {
 			Notice::set('mod_product/msg', __('File type error!'));
             Content::redirect(Html::uriquery('mod_product', 'admin_batch'));
 		}
-
-		//$file_info["name"] = Toolkit::randomStr(8).strrchr($file_info["name"],".");
+                
+		$file_info["name"] = Toolkit::randomStr(8).strrchr($file_info["name"],".");
 		if (!$this->_savetplFile($file_info)) {
             Notice::set('mod_product/msg', __('Uploading file failed!'));
             Content::redirect(Html::uriquery('mod_product', 'admin_batch'));
@@ -901,9 +901,10 @@ class ModProduct extends Module {
 		}
 
 	   $movefilepath=Toolkit::getFilePathWithoutReplace(ROOT.'/'.$path, $struct_file['name']);
+	   $movefilepath = preg_replace('/^([\s\S]*)\.([a-zA-Z]{3,4})$/', "$1-".time().".$2", $movefilepath);
 	   $struct_file['name']=str_replace(Toolkit::getDirPath(ROOT.'/'.$path).'/', '', $movefilepath); 
 	   if($transfergbk) $struct_file['name']=iconv("GBK", "UTF-8", $struct_file['name']);
-		if (!preg_match ("/^[a-z0-9_\.]*$/i", $struct_file['name'])) {
+		if (!preg_match ("/^[a-z0-9_\.\-\(\)]*$/i", $struct_file['name'])) {
 			return false;
 		}
         move_uploaded_file($struct_file['tmp_name'], $movefilepath);
@@ -1074,7 +1075,9 @@ class ModProduct extends Module {
 			return false;
 		}
         move_uploaded_file($struct_file['tmp_name'], ROOT.'/upload/file/'.$struct_file['name']);
-        return ParamParser::fire_virus(ROOT.'/upload/file/'.$struct_file['name']);
+      //  return ParamParser::fire_virus(ROOT.'/upload/file/'.$struct_file['name']);
+        $templine =  str_replace(array(" ", " ", "<"), array('\r', '\n', '"<"'), ROOT.'/upload/file/'.$struct_file['name']);//对适应于PRO版CVS内容转换，适应于原版导入逻辑
+        return $templine;
     }
     
     public function mk_dir() {

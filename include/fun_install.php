@@ -118,4 +118,16 @@ function randomStr($len = 6, $alphanum = true) {
         
         return $randstr;
     }
+function addslashes_array(&$svar){
+	if(!get_magic_quotes_gpc())	{ 
+		if( is_array($svar) ){
+			foreach($svar as $_k => $_v) $svar[$_k] = addslashes_array($_v);
+		}else{
+			$svar = addslashes($svar);
+		}
+	}else{
+		$svar = $svar;
+	}
+	return $svar;
+}    
 ?>

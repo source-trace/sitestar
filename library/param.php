@@ -237,7 +237,14 @@ class ParamHolder {
 					self::checkattack($_GET,$getfilter);
                     $rs =& ParamParser::retrive($_GET, $key_path, $default);
                 } else if (ParamParser::has($_POST, $key_path)) {
-					self::checkattack($_POST,$postfilter);
+					if( !($_POST['_m'] == 'mod_lang' && in_array($_POST['_a'], array('file_save', 'file_savea'))) 
+						&& !($_POST['_m'] == 'mod_article' && in_array($_POST['_a'], array('admin_update', 'admin_create')))
+						&& !($_POST['_m'] == 'mod_product' && in_array($_POST['_a'], array('admin_create', 'admin_update')))
+						&& !($_POST['_m'] == 'mod_static' && in_array($_POST['_a'], array('admin_create', 'admin_update')))
+						&& !($_POST['_m'] == 'mod_tool' && in_array($_POST['_a'], array('add_mblock', 'save_prop')))
+					){
+						self::checkattack($_POST,$postfilter);
+					}
                     $rs =& ParamParser::retrive($_POST, $key_path, $default);
                 } else if (ParamParser::has($_COOKIE, $key_path)) {
 					self::checkattack($_COOKIE,$cookiefilter);
@@ -253,6 +260,8 @@ class ParamHolder {
             default:
                 $rs = $default;
         }
+        $rs = str_replace("..","_",$rs);//本地包含漏洞
+//        $rs = str_replace("../","_",$rs);//本地包含漏洞
         return $rs;
     }
 	public static function checkattack($get,$reg){

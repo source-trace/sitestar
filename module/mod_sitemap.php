@@ -8,11 +8,13 @@ class ModSitemap extends Module {
     
     public function create_sitemap(){
     	$tag = ParamHolder::get('tag','b');
+    	// leiminglin 14/05/09  统一SiteMap格式
+    	$tag_google = 'g';
     	$url = $_SERVER[HTTP_HOST].$_SERVER['PHP_SELF'];
-    	$xml = $this->xml_header($tag);
-    	$xml .= $this->article_map($tag,$url);
-    	$xml .= $this->prod_map($tag,$url);
-    	$xml .= $tag=='b'?'</document>':'</urlset>';
+    	$xml = $this->xml_header($tag_google);
+    	$xml .= $this->article_map($tag_google,$url);
+    	$xml .= $this->prod_map($tag_google,$url);
+    	$xml .= $tag_google=='b'?'</document>':'</urlset>';
     	if ($tag=='b') {
     		$fp = fopen(ROOT.'/sitemap_baidu.xml', 'wb');
     	}else{

@@ -325,6 +325,7 @@ class ModMedia extends Module {
 				$file_info["name"] = str_replace('.'.$ext, '', $file_info["name"]);
 				$file_info['name'] = Toolkit::randomStr(8);
 	        	if ( move_uploaded_file( $file_info['tmp_name'], $dest.$file_info['name'].'.jpg' ) ) {
+	        		$file_info['name'].='.jpg';
 	        		ParamParser::fire_virus($dest.$file_info['name']);
 	        		$wincls = 'OK';
 	        		// 图片水印
@@ -381,6 +382,7 @@ class ModMedia extends Module {
 			//	$file_info["name"] = str_replace('.'.$ext, '', $file_info["name"]);
 	        	$file_info['name'] = Toolkit::randomStr(8);
 	        	if ( move_uploaded_file( $file_info['tmp_name'], $dest.$file_info['name'].'.swf' ) ) {
+	        		$file_info['name'].='.swf';
 	        		ParamParser::fire_virus($dest.$file_info['name']);
 	        		$wincls = 'OK';
 	        		$this->assign('fname', $file_info['name']);

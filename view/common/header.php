@@ -13,7 +13,7 @@ if(isset($curr_article)){
 //---------文章和产品description标识 hfh-----------------
 $_pathseo = explode('-',$_path); //MOD_REWRITE 3 seo add 2013.12.11
 //if(isset($_GET['_m']) && $_GET['_m'] == 'mod_article' && $_GET['_a'] == 'article_content' && !empty($_GET['article_id']))
-if((isset($_GET['_m']) && $_GET['_m'] == 'mod_article' && $_GET['_a'] == 'article_content' && !empty($_GET['article_id'])) || (isset($_GET['_m']) && R_MOD == 'mod_article' && R_ACT == 'article_content' && !empty($_pathseo[1])) )
+if((isset($_GET['_m']) && $_GET['_m'] == 'mod_article' && $_GET['_a'] == 'article_content' && !empty($_GET['article_id'])) || ( R_MOD == 'mod_article' && R_ACT == 'article_content' && !empty($_pathseo[1])) )
 {
 	//if(!empty($curr_article->intro))
 	if ($curr_article->is_seo == '1')

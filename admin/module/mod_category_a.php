@@ -56,6 +56,7 @@ class ModCategoryA extends Module {
             return '_result';
         }
         $is_member_only = ParamHolder::get('ismemonly', '0');
+		$is_member_only = intval($is_member_only);
         try {
         	$cate_a_info['alias'] = 'caa_'.Toolkit::randomStr(8);
         	// Re-arrange publish status
@@ -118,7 +119,8 @@ class ModCategoryA extends Module {
     	$this->_layout = 'content';
     	
         $caa_id = ParamHolder::get('caa_id', '0');
-        if (intval($caa_id) == 0) {
+		$caa_id = intval($caa_id);
+        if ($caa_id == 0) {
             $this->assign('json', Toolkit::jsonERR(__('Invalid ID!')));
             return '_error';
         }
@@ -156,6 +158,7 @@ class ModCategoryA extends Module {
             return '_result';
         }
         $is_member_only = ParamHolder::get('ismemonly', '0');
+		$is_member_only = intval($is_member_only);
         try {
         	// Re-arrange publish status
             if ($cate_a_info['published'] == '1') {

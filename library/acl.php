@@ -106,7 +106,7 @@ ParamParser::writeFile($file,$str);
      */
     public static function loginGuest() {
         if (!SessionHolder::has('user')) {
-            SessionHolder::set('user/id', 1);
+            SessionHolder::set('user/id', 0);
             SessionHolder::set('user/login', 'guest');
             SessionHolder::set('user/passwd', '305e67fb4048f3119c8a9136a14b56ebc51465ff');
             SessionHolder::set('user/s_role', '{guest}');

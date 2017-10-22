@@ -68,6 +68,16 @@ echo str_replace('sitestar_','',SYSVER);
 </div><!--dashboard_top_t_r end-->
 </div><!--dashboard_top_t end-->
 <iframe id="adminiframe" src="index.php?<?php echo $url;?>" frameborder=0 width=880 onload="this.height=184;this.height=this.contentWindow.document.documentElement.scrollHeight" ></iframe>
+<script>
+function adjustHeight(h){
+	if( h != undefined && h != '' ){
+		document.getElementById('adminiframe').height = h;
+		return;
+	}
+	var sheight=document.getElementById('adminiframe').contentWindow.document.documentElement.scrollHeight
+	document.getElementById('adminiframe').height = sheight<600?600:sheight;
+}
+</script>
 </div>
 </div>
 </div>

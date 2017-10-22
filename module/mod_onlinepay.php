@@ -489,7 +489,8 @@ FORM;
             	"out_trade_no"   => "ord".$curr_order->oid,     //商品外部交易号，必填（保证唯一性）
                 "subject"        => $order_prods,       //商品名称，必填
                 "body"           => $order_prods.$spec_code,       //商品描述，必填
-                "total_fee"      => strval($curr_order->discount_price) + strval($curr_order->delivery_fee)           //商品单价，必填（价格不能为0）
+             //   "total_fee"      => strval($curr_order->discount_price) + strval($curr_order->delivery_fee)           //商品单价，必填（价格不能为0）
+                "total_fee"      => strval($curr_order->total_amount)            //商品单价，必填（价格不能为0）
             );
             $alipay = new alipay_service($parameter, $curr_payacct->partner_key, "MD5");
             $link = $alipay->create_url();

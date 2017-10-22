@@ -43,7 +43,7 @@ ol,ul,li{list-style-type:none;}
 .dashboard_manage_icon_08{ background:url(../images/dashboard_manage_icon_08.png) no-repeat; behavior: url("template/css/iepngfix.htc");}
 .dashboard_manage_icon_09{ background:url(../images/dashboard_manage_icon_09.png) no-repeat; behavior: url("template/css/iepngfix.htc");}
 .dashboard_manage_icon_10{ background:url(../images/dashboard_manage_icon_10.png) no-repeat; behavior: url("template/css/iepngfix.htc");}
-.dashboard_authorize{ height:102px; background:url(../images/dashboard_copyright.png) no-repeat; behavior: url("template/css/iepngfix.htc"); overflow:hidden; margin:15px auto 25px auto; padding:6px 55px;}
+.dashboard_authorize{ height:102px; background:url(../images/dashboard_copyright.png) no-repeat; behavior: url("template/css/iepngfix.htc"); overflow:hidden; margin:15px auto 25px auto; padding:6px 135px;}
 .dashboard_authorize_font{ float:left; margin-right:10px; color:#FFF; width:400px;}
 .dashboard_authorize_font h2{ font-weight:normal; margin-bottom:5px; font-size:16px; font-family:'Microsoft yahei'; color:#fff0aa;}
 .dashboard_authorize_font a,.dashboard_authorize_font a:visited{ color:#fff0aa;}
@@ -55,7 +55,7 @@ ol,ul,li{list-style-type:none;}
 .dashboard_authorize_oneyear{ background:url(../images/dashboard_authorize_oneyear.png) no-repeat; behavior: url("template/css/iepngfix.htc"); margin-right:12px; color:#644e27;}
 .dashboard_authorize_oneyear span,.dashboard_authorize_all span{ color:#c50000; font-weight:bold; font-size:16px;}
 .dashboard_authorize_oneyear:hover{ background:url(../images/dashboard_authorize_oneyear_hover.png) no-repeat; behavior: url("template/css/iepngfix.htc");}
-.dashboard_authorize_all{ background:url(../images/dashboard_authorize_allyear.png) no-repeat; behavior: url("template/css/iepngfix.htc");}
+.dashboard_authorize_all{ background:url(../images/dashboard_authorize_allyear.png) no-repeat; behavior: url("template/css/iepngfix.htc"); display: none;}
 .dashboard_authorize_all:hover{ background:url(../images/dashboard_authorize_allyear_hover.png) no-repeat; behavior: url("template/css/iepngfix.htc");}
 .dashboard_authorize_buy{ padding:3px 0 0 6px;}
 .dashboard_footer{ height:63px; padding-top:10px; border-top:1px solid #6a8db6; background:url(../images/dashboard_footer.gif) repeat-x; margin:0 auto; text-align:center; color:#FFF;}

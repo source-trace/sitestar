@@ -85,6 +85,7 @@ class ModNews extends Module {
             return '_result';
         }
         $is_member_only = ParamHolder::get('ismemonly', '0');
+		$is_member_only = intval($is_member_only);
         try {
             // Re-arrange publish time
         	$article_info['pub_start_time'] = -1;
@@ -145,7 +146,8 @@ class ModNews extends Module {
         $this->_layout = 'content';
 
         $article_id = ParamHolder::get('article_id', '0');
-        if (intval($article_id) == 0) {
+		$article_id = intval($article_id);
+        if ($article_id == 0) {
             $this->assign('json', Toolkit::jsonERR(__('Invalid ID!')));
             return '_error';
         }
@@ -180,6 +182,7 @@ class ModNews extends Module {
             return '_result';
         }
         $is_member_only = ParamHolder::get('ismemonly', '0');
+		$is_member_only = intval($is_member_only);
         try {
             // Re-arrange publish time
         	$article_info['pub_start_time'] = -1;

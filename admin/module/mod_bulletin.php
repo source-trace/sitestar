@@ -49,6 +49,7 @@ class ModBulletin extends Module {
         SessionHolder::set('mod_bulletin/_LOCALE', $lang_sw);
 
 		$bulletin_id = ParamHolder::get('bulletin_id', '0');
+		$bulletin_id = intval($bulletin_id);
         if (!empty($bulletin_id)) {
         	$next_action = 'admin_update';
         	
@@ -82,6 +83,7 @@ class ModBulletin extends Module {
         SessionHolder::set('mod_bulletin/_LOCALE', $lang_sw);
 
 		$bulletin_id = ParamHolder::get('bulletin_id', '0');
+		$bulletin_id = intval($bulletin_id);
         if (!empty($bulletin_id)) {
         	$next_action = 'admin_update';
         	
@@ -116,6 +118,7 @@ class ModBulletin extends Module {
         }
 
         $is_member_only = ParamHolder::get('ismemonly', '0');
+		$is_member_only = intval($is_member_only);
         try {
             $bulletin_info['pub_start_time'] = -1;
             $bulletin_info['pub_end_time'] = -1;
@@ -147,6 +150,7 @@ class ModBulletin extends Module {
             return '_result';
         }
         $is_member_only = ParamHolder::get('ismemonly', '0');
+		$is_member_only = intval($is_member_only);
         try {
             $bulletin_info['pub_start_time'] = -1;
 			$bulletin_info['pub_end_time'] = -1;

@@ -27,7 +27,7 @@ function pageLocation(){
 		window.location= "index.php?<?php echo Html::xuriquery($page_mod, $page_act, $page_extUrl); ?>"+"&p="+p_v;
 	} else {
 		<?php if(MOD_REWRITE!='3'){ ?>
-		if(locationPage.match(/(.html)/) && ){
+		if(locationPage.match(/(.html)/)){
 			var locaTo = locationPage.replace("admin_list","admin_list-p-"+p_v);
 			window.location = locaTo;
 		}else{

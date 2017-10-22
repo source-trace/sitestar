@@ -13,12 +13,12 @@ class ModOrder extends Module {
         $products = array();
 
         $this->assign('n_prds', $this->_countProductsInCart());
-
+        
         $order_price = 0;
         $order_delivery_fee = 0;
         $order_grand_ttl = 0;
-
-        if (isset($_COOKIE['prds'.$user_id])) {
+        
+        if (isset($_COOKIE['prds'.$user_id])) {           
             foreach ($_COOKIE['prds'.$user_id] as $key => $val) {
                 $add_product = new Product($key);
                 if (isset($add_product->online_orderable)) {
@@ -32,7 +32,23 @@ class ModOrder extends Module {
                 }
             }
         }
+        //修复cookie漏洞修复后userid由1 改为0
+         //2014.4.1 未登录前userid=0产品Cookies信息
+        if (isset($_COOKIE['prds0'])) {           
+            foreach ($_COOKIE['prds0'] as $key => $val) {
+                $add_product = new Product($key);
+                if (isset($add_product->online_orderable)) {
+                    $add_product->order_num = $_COOKIE['n_prd0'][$key];
+                    $add_product->order_ttl_price = number_format(floatval($add_product->discount_price) * intval($_COOKIE['n_prd0'][$key]), 2);
 
+                    $order_price += floatval($add_product->discount_price) * intval($_COOKIE['n_prd0'][$key]);
+                    $order_delivery_fee += floatval($add_product->delivery_fee);
+
+                    $products[] = $add_product;
+                }
+            }
+        }        
+        
         $order_grand_ttl = $order_price + $order_delivery_fee;
 
         $this->assign('order_price', number_format($order_price, 2));
@@ -52,7 +68,9 @@ class ModOrder extends Module {
         $submit_order =& trim(ParamHolder::get('submit_order', '', PS_POST));
         if (strlen($submit_order) > 0) {
             $curr_user_id = SessionHolder::get('user/id');
+            $cookies_user_id = $curr_user_id;
             $curr_addr_id = ParamHolder::get('selected_delivery_addr', '0');
+			$curr_addr_id = intval($curr_addr_id);
             // 13/05/2010 >>
             $curr_message =& ParamHolder::get('message', '');
             $curr_message = htmlspecialchars($curr_message,ENT_QUOTES);
@@ -63,7 +81,14 @@ class ModOrder extends Module {
                 $order_delivery_fee = 0;
                 $order_grand_ttl = 0;
 
-                if (isset($_COOKIE['prds'.$curr_user_id])) {
+                
+                $cookies_prds = $_COOKIE['prds'.$cookies_user_id];
+                if (!isset($cookies_prds)) {
+                    $cookies_user_id = '0';//未登录状态下userid==0
+                }
+                
+                
+                if (isset($_COOKIE['prds'.$cookies_user_id])) {
                     // Create an order first
                     $o_order = new OnlineOrder();
                     $o_order->oid = date('Y');
@@ -107,7 +132,7 @@ class ModOrder extends Module {
                     // 13/05/2010 <<
                     $o_order->save();
 
-                    foreach ($_COOKIE['prds'.$curr_user_id] as $key => $val) {
+                    foreach ($_COOKIE['prds'.$cookies_user_id] as $key => $val) {
                         $add_product = new Product($key);
 
                         if ($add_product->online_orderable) {
@@ -119,16 +144,16 @@ class ModOrder extends Module {
                             $o_ordproduct->price = $add_product->discount_price;
 
 							//2013/5/9
-							$is_c=Toolkit::cuncode($_COOKIE['n_prd'.$curr_user_id][$key],$_COOKIE['n_prd2'.$curr_user_id][$key]);
+							$is_c=Toolkit::cuncode($_COOKIE['n_prd'.$cookies_user_id][$key],$_COOKIE['n_prd2'.$cookies_user_id][$key]);
 							if(!$is_c){
 								$this->assign('json', Toolkit::jsonERR(__('Invalid ID!')));
 								return '_result';
 							}
-                            $o_ordproduct->amount = $_COOKIE['n_prd'.$curr_user_id][$key];
+                            $o_ordproduct->amount = $_COOKIE['n_prd'.$cookies_user_id][$key];
                             $o_ordproduct->save();
 
-                            $order_price += floatval($add_product->price) * intval($_COOKIE['n_prd'.$curr_user_id][$key]);
-                            $order_discount_price += floatval($add_product->discount_price) * intval($_COOKIE['n_prd'.$curr_user_id][$key]);
+                            $order_price += floatval($add_product->price) * intval($_COOKIE['n_prd'.$cookies_user_id][$key]);
+                            $order_discount_price += floatval($add_product->discount_price) * intval($_COOKIE['n_prd'.$cookies_user_id][$key]);
                             $order_delivery_fee += floatval($add_product->delivery_fee);
                         }
                         ShoppingCart::removeProduct($key);
@@ -173,7 +198,7 @@ class ModOrder extends Module {
             $this->assign('json', Toolkit::jsonERR(__('Invalid ID!')));
             return '_error';
         }
-
+        
         $o_order = new OnlineOrder();
         if (strlen($curr_order_id)==10) {
         	 $curr_order =& $o_order->find("oid=? AND user_id=?", array($curr_order_id, $curr_user_id));
@@ -450,7 +475,7 @@ class ModOrder extends Module {
 	//兑换积分的逻辑动作：
 	public function userjifen_save(){
 		$integral = ParamHolder::get('exchange');
-
+                $integral = intval($integral);
 		if (trim(SessionHolder::get('SS_LOCALE')) != '') {// 多语言切换用  		
 			$curr_locale = trim(SessionHolder::get('_LOCALE'));
 		} else {
@@ -472,6 +497,13 @@ class ModOrder extends Module {
 			echo '<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />';
 			echo '<script type="text/javascript">
 			alert("'.__('Sorry, membership points can be converted more than 100 Member Points').'");
+			location.href="'.Html::uriquery('mod_order', 'userjifen').'";</script>';
+			exit;
+		}
+		if ($curr_user_ext->total_point < $integral ){
+			echo '<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />';
+			echo '<script type="text/javascript">
+			alert("'.__('Sorry, your current score is not enough cannot change').'");
 			location.href="'.Html::uriquery('mod_order', 'userjifen').'";</script>';
 			exit;
 		}

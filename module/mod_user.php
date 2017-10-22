@@ -141,12 +141,13 @@ class ModUser extends Module {
 
     public function save_profile() {
        $user_info =@ ParamHolder::get('user', array());
+       unset($user_info['s_role']);
 	   $extend_info=& ParamHolder::get('extends', array());
         if (sizeof($user_info) <= 0) {
             $this->assign('json', Toolkit::jsonERR(__('Missing user information!')));
             return '_result';
         }
-        $user_id = SessionHolder::get('user/id');
+        $user_id = SessionHolder::get('user/id',0);
         if (empty($user_id)){
         	$this->assign('json', Toolkit::jsonERR(__('Login first!')));
         	return '_result';
@@ -154,7 +155,10 @@ class ModUser extends Module {
         $passwd_changed = false;
         try {
             $o_user = new User($user_id);
-
+			if($o_user->s_role=='{admin}'){
+				$this->assign('json', Toolkit::jsonERR(__('Role Error!')));
+				return '_result';
+			}
             if ($user_info['email'] != $o_user->email) {
                 /* Check duplicates */
                 if ($o_user->count("email=?", array($user_info['email'])) > 0) {
@@ -327,6 +331,11 @@ class ModUser extends Module {
             $this->assign('json', Toolkit::jsonERR(__('Password Mismatch!')));
             return '_result';
         }
+        if (!preg_match ("/^[a-z0-9_\.@]*$/i",  $user_info['login'])) {
+            $this->assign('json', Toolkit::jsonERR(__('Invalid user!')));
+            return '_result';
+	}
+        $user_info['login']  = strip_tags($user_info['login']);
         $user_info['passwd'] = sha1($user_info['passwd']);
         try {
             $o_user = new User();

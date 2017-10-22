@@ -6,8 +6,9 @@
 */
 @session_start();
 if (!defined('IN_CONTEXT')) die('access violation error!');
-
+ini_set("display_errors","off");
 error_reporting(E_ALL ^ E_NOTICE);
+
 define('DS', DIRECTORY_SEPARATOR);
 
 define('ROOT', realpath(dirname(__FILE__).'/..'));
@@ -24,23 +25,29 @@ include_once ROOT."/include/fun_install.php";
 include_once INSTALL_ROOT."/include/http.class.php";
 $_a = ParamHolder::get("_a","");
 $_m = ParamHolder::get("_m","frontpage");
-$db_host1 = ParamHolder::get("db_host","");
-$db_user = ParamHolder::get("db_user","");
-$db_pwd = ParamHolder::get("db_pwd","");
-$db_name = ParamHolder::get("db_name","");
-$db_prefix = ParamHolder::get("db_prefix","");
-$db_port = ParamHolder::get("db_port","");
-$admin_name = ParamHolder::get("admin_name","");
-$admin_pwd = ParamHolder::get("admin_pwd","");
-$demo = ParamHolder::get("demo","");
+
+
+
+$db_host1 = addslashes_array(ParamHolder::get("db_host",""));
+$db_user = addslashes_array(ParamHolder::get("db_user",""));
+$db_pwd = addslashes_array(ParamHolder::get("db_pwd",""));
+$db_name = addslashes_array(ParamHolder::get("db_name",""));
+$db_prefix = strtolower(addslashes_array(ParamHolder::get("db_prefix","")));
+$db_port = addslashes_array(ParamHolder::get("db_port",""));
+$admin_name = addslashes_array(ParamHolder::get("admin_name",""));
+$admin_pwd = addslashes_array(ParamHolder::get("admin_pwd",""));
+$demo = addslashes_array(ParamHolder::get("demo",""));
 $db_host = $db_host1.":".$db_port;
 $lockfile = ROOT.'/install.lock';
 $pattern_db = '/[0-9a-zA-Z]*$/';
-if(!preg_match($pattern_db, $db_name)||!preg_match($pattern_db, $db_user)){
+if(!preg_match($pattern_db, $db_name)||!preg_match($pattern_db, $db_user)||!preg_match($pattern_db, $db_prefix)){
 	echo '1001';exit;
 }
-if(file_exists($lockfile) && ($_a=='template' || $_a=='setting' || $_a=='check')) {
+    //if(file_exists($lockfile) && ($_a=='template' || $_a=='setting' || $_a=='check')) {
+if(file_exists($lockfile)) {
+    if($_a!='result'){
 		exit('please delete install.lock!');
+    }
 }
 if($_a=='template'){
 	include P_TPL."/template.php";
@@ -57,7 +64,7 @@ if($_a=='template'){
 	}else{
 		$ip='127.0.0.1';
 	}
-	$version = 'sitestar_v2.7_build131012';
+	$version = 'sitestar_v2.7_build140505';
 	$system = preg_replace('/\s/','',PHP_OS);
 	$vphp = PHP_VERSION;
 	$vmysql = $_SESSION['vmysql'];

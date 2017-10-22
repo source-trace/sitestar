@@ -37,6 +37,7 @@ class ModAuth extends Module {
 		$this->_layout = NO_LAYOUT;
 		
 		$type=ParamHolder::get('type');
+		$type = $this->auth_filter($type,1);
 		try{
 			$className=$this->auth_lib($type);
 			if(empty($className)) die('Failed!');
@@ -54,6 +55,10 @@ class ModAuth extends Module {
 		$this->_layout = NO_LAYOUT;
 		$type=$_REQUEST['type'];
 		$code=$_REQUEST['code'];
+                
+        $type = $this->auth_filter($type,1);
+        $code = $this->auth_filter($code,2);
+                
 		$db=MysqlConnection::get();
 		$db->query("SET sql_mode = ''");
 
@@ -205,8 +210,33 @@ LOGSTR;
         Content::redirect(Html::uriquery('frontpage', 'index'));
     }
 		
-	private function auth_lib($type){
-		return UserOauth::auth_lib($type);
-	}	
+    private function auth_lib($type){
+            return UserOauth::auth_lib($type);
+    }
+     //2014.3.31   
+    public function auth_filter($para,$type) {
+        
+        $error = 0;$pattern_db = '/[0-9a-z]/';
+        $para = trim($para);
+        if(!preg_match ("/^[a-z0-9]*$/", $para)){
+                 die('Failed!');exit;
+        }
+        
+            if($type==1){
+                $allow_request = array("qq","sina");
+                if(!in_array($para,$allow_request)) $error = 1;
+                $strstr = $para ;
+            }
+            if($type==2){
+                //if(!preg_match ("/^[a-z0-9]*$/", $para)) $error = 1;
+            }
+        
+        if($error){
+            die('Failed!');
+        }else{
+            return $strstr;
+        }
+
+    }
 }
 ?>

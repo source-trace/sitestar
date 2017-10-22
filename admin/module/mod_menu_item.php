@@ -138,6 +138,7 @@ class ModMenuItem extends Module {
             return '_result';
         }
         $is_member_only = ParamHolder::get('ismemonly', '0');
+		$is_member_only = intval($is_member_only);
         try {
             include_once(P_INC.'/menus.php');
             $tmplink = '';
@@ -198,7 +199,8 @@ class ModMenuItem extends Module {
         $this->_layout = 'content';
 
         $mi_id = ParamHolder::get('mi_id', '0');
-        if (intval($mi_id) == 0) {
+		$mi_id = intval($mi_id);
+        if ($mi_id == 0) {
             $this->assign('json', Toolkit::jsonERR(__('Invalid ID!')));
             return '_error';
         }
@@ -238,7 +240,9 @@ class ModMenuItem extends Module {
 
         $menu_id = ParamHolder::get('menu_id', 0);
 		$mi_id = ParamHolder::get('mi_id', '0');
-        if (intval($mi_id) == 0) {
+		$menu_id = intval($menu_id);
+		$mi_id = intval($mi_id);
+        if ($mi_id == 0) {
             $this->assign('json', Toolkit::jsonERR(__('Invalid ID!')));
             return '_error';
         }
@@ -287,6 +291,7 @@ class ModMenuItem extends Module {
             return '_result';
         }
         $is_member_only = ParamHolder::get('ismemonly', '0');
+		$is_member_only = intval($is_member_only);
         try {
             include_once(P_INC.'/menus.php');
             $tmplink = '';
@@ -359,6 +364,7 @@ class ModMenuItem extends Module {
             return '_result';
         }
         $is_member_only = ParamHolder::get('ismemonly', '0');
+		$is_member_only = intval($is_member_only);
         try {
             //$link_type_parts = explode('|', $mi_info['link_type']);
             //$mi_info['mi_category'] = $link_type_parts[0];
@@ -777,6 +783,7 @@ class ModMenuItem extends Module {
             return '_result';
         }
         $is_member_only = ParamHolder::get('ismemonly', '0');
+		$is_member_only = intval($is_member_only);
         try {
             include_once(P_INC.'/menus.php');
             $tmplink = '';

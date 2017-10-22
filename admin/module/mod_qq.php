@@ -114,7 +114,8 @@ class ModQq extends Module {
     	$this->_layout = 'content';
     	
         $q_id = ParamHolder::get('q_id', '0');
-        if (intval($q_id) == 0) {
+		$q_id = intval($q_id);
+        if ($q_id == 0) {
             $this->assign('json', Toolkit::jsonERR(__('Invalid ID!')));
             return '_error';
         }

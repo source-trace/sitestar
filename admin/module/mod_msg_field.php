@@ -38,7 +38,8 @@ class ModMsgField extends Module {
        $this->_layout = 'content';
 
         $cat_id = ParamHolder::get('id', '0');
-        if (intval($cat_id) == 0) {
+		$cat_id = intval($cat_id);
+        if ($cat_id == 0) {
             $this->assign('json', Toolkit::jsonERR(__('Invalid ID!')));
             return '_error';
         }

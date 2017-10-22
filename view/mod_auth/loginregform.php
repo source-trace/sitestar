@@ -146,7 +146,7 @@ $reg_form->p_open('mod_user', 'do_reg', '_ajax');
                 __('Please input e-mail address!'));
             ?></div>
      </div>
-      <div class="mess_list">        
+<!--      <div class="mess_list">        
 	<div class="mess_title"><?php _e('Name'); ?></div><div class="mess_input"><?php
             echo Html::input('text', 'user[full_name]');
             ?></div>
@@ -155,7 +155,7 @@ $reg_form->p_open('mod_user', 'do_reg', '_ajax');
 	<div class="mess_title"><?php _e('Telephone'); ?></div><div class="mess_input"><?php
             echo Html::input('text', 'user[mobile]');
             ?></div>
-	</div>
+	</div>-->
    <?php
 foreach($user_fields as $fieldinfo){ 
 ?>

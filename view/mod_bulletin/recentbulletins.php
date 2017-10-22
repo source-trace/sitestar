@@ -26,7 +26,7 @@ if (sizeof($bulletins_list)) {
 	echo '<div class="list_main"><div class="marquee bulletin" style="margin-top:15px;">'.__('No Records!').'</div><div class="list_bot"></div></div><div class="blankbar"></div>';
 }
 if($bulletin_type=='1'){
-	if(count($bulletins_list)>=4){
+	if(count($bulletins_list)>4 ){
 ?>
 <script type="text/javascript"> 
 function startmarquee(lh,speed,delay,index){ 

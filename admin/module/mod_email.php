@@ -91,8 +91,8 @@ class ModEmail extends Module {
     	global $db;
     	$send_id = SessionHolder::get("user/id");
     	$roles = ParamHolder::get("role");
-    	$title = ParamHolder::get("title");
-    	$msg = ParamHolder::get("message");
+    	$title = strip_tags(ParamHolder::get("title"));
+    	$msg = strip_tags(ParamHolder::get("message"));
     	$time = time();
     	if (empty($roles)) {
     		echo "<script>alert('".__("Choose you want sent member,please")."');history.go(-1);</script>";
@@ -106,6 +106,7 @@ class ModEmail extends Module {
     		echo "<script>alert('".__("Send conten not empty")."');history.go(-1);</script>";
     		exit;
     	}
+		
     	foreach ($roles as $k=>$row){
     		$sql = "select id,login from ".Config::$tbl_prefix."users where s_role='{".$row."}'";
     		$res = $db->query($sql);
@@ -126,8 +127,8 @@ class ModEmail extends Module {
     	$this->_layout = 'content';
     	$send_id = SessionHolder::get("user/id");
     	$user = ParamHolder::get("user");
-    	$title = ParamHolder::get("title");
-    	$msg = ParamHolder::get("message2");
+    	$title = strip_tags(ParamHolder::get("title"));
+    	$msg = strip_tags(ParamHolder::get("message2"));
     	$time = time();
     	$ok = 0;
     	if (empty($title)) {

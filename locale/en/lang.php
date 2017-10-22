@@ -126,7 +126,7 @@ return array(
 	"Missing login name!"=>"Missing login name!", 
 	"User login name available!"=>"User login name available!", 
 	"User login name exists!"=>"User login name exists!", 
-	"Invalid Password!"=>"Invalid Password!", 
+	"Invalid Password!"=>"Invalid Password!",
 	"Resetting password failed! Please contact webmaster or retry later!"=>"Resetting password failed! Please contact webmaster or retry later!", 
 	"OK, password reset! Please login now!"=>"OK, password reset! Please login now!", 
 	"Reset Password"=>"Reset Password", 

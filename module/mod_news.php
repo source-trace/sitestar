@@ -36,7 +36,8 @@ class ModNews extends Module
 		$this->_layout = 'mod_article';
         $news_id = ParamHolder::get('news_id', '0');
         $curr_locale = trim(SessionHolder::get('_LOCALE'));
-        if (intval($news_id) == 0) 
+		$news_id = intval($news_id)
+        if ($news_id == 0) 
         {
             ParamParser::goto404();
         }

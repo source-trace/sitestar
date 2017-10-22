@@ -145,9 +145,10 @@ class ModDownload extends Module {
         
         	$dw_id = intval($arr[1]);
         }else{
-        $dw_id = ParamHolder::get('dw_id', '0');
+        	$dw_id = ParamHolder::get('dw_id', '0');
 		}
-        if (intval($dw_id) == 0) {
+		$dw_id = intval($dw_id);
+        if ($dw_id == 0) {
             $this->assign('json', Toolkit::jsonERR(__('Invalid ID!')));
             return '_error';
         }

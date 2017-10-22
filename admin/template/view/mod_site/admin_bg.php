@@ -59,10 +59,12 @@ $(function(){
 			});
 		}
 	}
-	
+
+
 $('.wp-bg-set-position-block span').click(function(){
 		//_inposition();
-		var changepos='left top';			
+		var changepos='left top';
+		$('.wp-bg-set-position-block span').removeClass('wp-bg-tl-selected wp-bg-tc-selected wp-bg-tr-selected wp-bg-ml-selected wp-bg-mc-selected wp-bg-mr-selected wp-bg-bl-selected wp-bg-bc-selected wp-bg-br-selected');			
 		if($(this).hasClass('wp-bg-set-top-left')){ $(this).addClass('wp-bg-tl-selected'); changepos='left top';}
 		if($(this).hasClass('wp-bg-set-top-center')){$(this).addClass('wp-bg-tc-selected'); changepos='center top';}
 		if($(this).hasClass('wp-bg-set-top-right')){$(this).addClass('wp-bg-tr-selected'); changepos='right top';}

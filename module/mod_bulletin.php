@@ -62,7 +62,8 @@ class ModBulletin extends Module {
         }else{
         	$bulletin_id = trim(ParamHolder::get('bulletin_id', '0'));
         }
-        if (intval($bulletin_id) == 0) {
+        $bulletin_id = intval($bulletin_id);
+        if ($bulletin_id == 0) {
             ParamParser::goto404();
         }
         $user_role = trim(SessionHolder::get('user/s_role', '{guest}'));

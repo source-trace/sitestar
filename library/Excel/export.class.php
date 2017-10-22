@@ -16,7 +16,8 @@ class Export_CSV {
 
 		foreach ($this->fields as $line) {
 			/*$line = preg_replace('/<.+?>/i', '', $line);*/
-			$line = str_replace(array("\r", "\n", "<"), array('\r', '\n', '"<"'), $line);
+			//$line = str_replace(array("\r", "\n", "<"), array('\r', '\n', '"<"'), $line);
+			$line = str_replace(array("\r", "\n"), array(' ', ' ',), $line);//导出数据内容适应于PRO版CSV
 		    fputcsv( $fp, $this->encode($line) );
 		}
 		

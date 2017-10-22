@@ -68,7 +68,8 @@ class ModEmail extends Module {
     	$msg .= ParamHolder::get("email_m");
     	$roles = ParamHolder::get("role");
     	$type = ParamHolder::get("type");
-    	$user_email = ParamHolder::get('users'); 
+    	$user_email = ParamHolder::get('users');
+        $title = mysql_escape_string($title);  $msg = mysql_escape_string($msg);$user_email = mysql_escape_string($user_email);
     	$send_id = SessionHolder::get("user/id");
     	$time = time();
     	$ok = 0;
@@ -92,9 +93,13 @@ class ModEmail extends Module {
                 exit;
 			}
 			if (strstr($user_email,'|')) {//如果是多个用户
-				$users = explode('|',$user_email);
+				$users = explode('|',$user_email); 
 				foreach ($users as $u){
-					$sql = "select id,email,login from ".Config::$tbl_prefix."users where login='".$u."'";
+                                           if (!preg_match ("/^[a-z0-9_\.@]*$/i",  $u)) {
+                                                echo "<script>alert('".__("Invalid user!")."');history.go(-1);</script>";
+                                                exit;
+                                           }
+					$sql = "select id,email,login from ".Config::$tbl_prefix."users where login='".mysql_escape_string($u)."'";
 			    	$res = $db->query($sql);
 			    	$eml = $res->fetchRow();
 			    	if (!empty($eml)) {
@@ -121,6 +126,10 @@ class ModEmail extends Module {
 		    		exit;
 				}
 			}else{//单个用户发送
+                                   if (!preg_match ("/^[a-z0-9_\.@]*$/i",  $user_email)) {
+                                        echo "<script>alert('".__("Invalid user!")."');history.go(-1);</script>";
+                                        exit;
+                                   }
 				$sql = "select id,login,email from ".Config::$tbl_prefix."users where login='".$user_email."'";
 			    $res = $db->query($sql);
 			    $eml = $res->fetchRow();
@@ -143,7 +152,14 @@ class ModEmail extends Module {
 				$e_eml = implode(',',$s_err);
 			}
 		}else{//邮件群发
+                        $load_roles = Toolkit::loadAllRoles(array('guest','admin'));
+                        for($i=0;$i<count($load_roles);$i++){
+                            $uall_roles[] = $load_roles[$i]->name;
+                        }
 			foreach ($roles as $k=>$row){
+                            //2014.3.31 filter roles
+                             if(!in_array($row, $uall_roles)){ die('access violation error!');}
+                             
 				$sql = "select id,login,email from ".Config::$tbl_prefix."users where s_role='{".$row."}'";
 			    $res = $db->query($sql);
 			    $emails = $res->fetchRows();

@@ -7,6 +7,10 @@ jQuery(function($){
 	$("#js-install-at-once").click( function () {
 		function obj(){
 			var _this = this;
+                        if(($("#js-admin-name").val()=='') || ($("#js-admin-password").val()=='')){
+                            $("#install_result").html("管理员用户名或登录密码不能为空！");
+                            return;
+                        }
 			var step = 1;
 			var step_a ="checkconnection";
 			this.resend = function(){
